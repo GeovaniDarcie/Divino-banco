@@ -43,6 +43,16 @@ public class Cliente {
     }
 
     /**
+     * Retorna todas as contas do cliente
+     * 
+     * @return conta do cliente
+     * 
+     */
+    public Collection<Conta> getConta() {
+        return contas;
+    }
+
+    /**
      * Retorna o código do cliente
      * 
      * @return código do cliente

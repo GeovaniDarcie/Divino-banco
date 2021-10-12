@@ -1,7 +1,5 @@
 package br.pucpcaldas.banco.dominio;
 
-import static org.junit.Assert.assertEquals;
-
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -29,63 +27,22 @@ public class TestaConta {
 		conta.depositar(0);
 	}
 
-	@Test
-	public void removeItem_DeveRemoverOItemRelacionadoAoProduto() {
-		Pedido pedido = new Pedido(1);
-
-		pedido.incluiItem(caneta, 3);
-
-		pedido.removeItem(caneta);
-
-		assertEquals(0.0, pedido.calculaTotal(), 0.01);
+	@Test(expected = IllegalArgumentException.class)
+	public void pagar_DeveRetonarUmaExcessaoParaContaIgualANull() {
+        Conta conta1 = new Conta(366, 50, "poupança", nubank);
+		conta1.pagar(null, 100);
+		conta1.pagar(null, 200);
 	}
 
-	@Test
-	public void removeItem_DeveRemoverOItemRelacionadoAoProdutoComDoisItens() {
-		Pedido pedido = new Pedido(1);
+    @Test
+	public void pagar_deveTerUmaContaValida() {
+		Conta conta1 = new Conta(366, 50, "poupança", nubank);
 
-		pedido.incluiItem(caneta, 3);
-		pedido.incluiItem(lapis, 1);
+		Conta conta2 = new Conta(366, 50, "corrente", bancoDoBrasil);
+		Conta conta3 = new Conta(366, 70, "poupança", bancoDoBrasil);
 
-		pedido.removeItem(caneta);
-
-		assertEquals(1.00, pedido.calculaTotal(), 0.01);
+		conta1.pagar(conta2, 100);
+		conta1.pagar(conta3, 200);
 	}
-
-	@Test(expected = RuntimeException.class)
-	public void calculafrete_DeveRetornarUmExcecaoParaUmPedidoVazio() {
-		Pedido pedido = new Pedido(1);
-
-		pedido.calculaFrete();
-	}
-
-	@Test
-	public void calculafrete_DeveRetornarZeroParaPedidoComValorMenorOuIgualA200() {
-		Pedido pedido = new Pedido(1);
-
-		pedido.incluiItem(caneta, 10);
-
-		assertEquals(0.0, pedido.calculaFrete(), 0.01);
-	}
-
-	@Test
-	public void calculafrete_DeveRetornar10ParaPedidoComValorMenorOuIgualA500() {
-		Pedido pedido = new Pedido(1);
-
-		pedido.incluiItem(caneta, 200);
-
-		assertEquals(10.0, pedido.calculaFrete(), 0.01);
-	}
-
-	@Test
-	public void calculafrete_DeveRetornar12ParaPedidoComValorMaiorQue500() {
-		Pedido pedido = new Pedido(1);
-
-		pedido.incluiItem(caneta, 300);
-		pedido.incluiItem(lapis, 100);
-
-		assertEquals(12.0, pedido.calculaFrete(), 0.01);
-	}
-
 }
 

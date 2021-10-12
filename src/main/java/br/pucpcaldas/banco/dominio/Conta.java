@@ -49,9 +49,12 @@ public class Conta {
     }
 
     /**
-     * Paga uma quantidade de dinheiro para um cliente
+     * Paga uma quantidade de dinheiro para uma conta
     */
-    public void pagar(int codigoDoCliente, double quantidade) {
+    public void pagar(Conta conta, double quantidade) {
+        if (conta == null)
+			throw new IllegalArgumentException("Conta inexistente!");
+        
         if (this.saldo > 0) {
             this.saldo = this.saldo - quantidade;
         }
