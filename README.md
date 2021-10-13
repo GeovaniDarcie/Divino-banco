@@ -1,7 +1,7 @@
 # Divino-banco
 
 
-### Geovani Darcie
+## Integrantes: Geovani Darcie
 
 > Um sistema de banco, para o cliente criar a sua conta, depositar, ver saldo, fazer pagamento....
 
