@@ -11,10 +11,10 @@ public class TestaBanco {
 
     @Test
     public void testeConstrutor_DeveCriarUmBancoValido() {
-        Banco caneta = new Banco(1, "caneta", 1.50);
+        Banco nubank = new Banco(1, "nubank", 1.50);
         
-        assertEquals(1, caneta.getCodigo());
-        assertEquals("caneta", caneta.getNome());
-        assertEquals(1.50, caneta.getAgencia(), 0.001);
+        assertEquals(1, nubank.getCodigo());
+        assertEquals("nubank", nubank.getNome());
+        assertEquals(1.50, nubank.getAgencia(), 0.001);
     }
 }

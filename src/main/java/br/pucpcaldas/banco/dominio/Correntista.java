@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 /** 
- * Um objeto classe <code>Cliente</code> representa as informações de um
- * Cliente.
+ * Um objeto classe <code>Correntista</code> representa as informações de um
+ * Correntista.
  * 
  * @author Geovani Darcie
  * @Version 1.0
  * 
 */
-public class Cliente {
+public class Correntista {
     private int codigo;
     private String nome;
     private String CPF;
@@ -21,11 +21,11 @@ public class Cliente {
     /**
      * Método construtor.
      * 
-     * @param codigo    código do cliente
-     * @param nome      nome do cliente
-     * @param CPF   número da agência do cliente
+     * @param codigo    código do Correntista
+     * @param nome      nome do Correntista
+     * @param CPF   número da agência do Correntista
      */
-    public Cliente(int codigo, String nome, String CPF) {
+    public Correntista(int codigo, String nome, String CPF) {
         this.codigo = codigo;
         this.nome = nome;
         this.CPF = CPF;
@@ -33,7 +33,7 @@ public class Cliente {
     }
 
     /**
-     * Abre uma conta para o cliente
+     * Abre uma conta para o Correntista
      * 
      */
     public void abrirConta(Conta conta) {
@@ -43,9 +43,9 @@ public class Cliente {
     }
 
     /**
-     * Retorna todas as contas do cliente
+     * Retorna todas as contas do Correntista
      * 
-     * @return conta do cliente
+     * @return conta do Correntista
      * 
      */
     public Collection<Conta> getConta() {
@@ -53,9 +53,9 @@ public class Cliente {
     }
 
     /**
-     * Retorna o código do cliente
+     * Retorna o código do Correntista
      * 
-     * @return código do cliente
+     * @return código do Correntista
      * 
      */
     public int getCodigo() {
@@ -63,9 +63,9 @@ public class Cliente {
     }
 
     /**
-     * Retorna o nome do cliente
+     * Retorna o nome do Correntista
      * 
-     * @return nome do cliente
+     * @return nome do Correntista
      * 
     */
     public String getNome() {
@@ -73,9 +73,9 @@ public class Cliente {
     }
 
     /**
-     * Retorna a CPF do Cliente
+     * Retorna a CPF do Correntista
      * 
-     * @return CPF do Cliente
+     * @return CPF do Correntista
      * 
      */
     public String getCPF() {
