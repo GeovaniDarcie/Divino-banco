@@ -1,0 +1,22 @@
+
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+  "-//Hibernate/Hibernate Mapping DTD//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="br.pucpcaldas.banco.dominio.Conta" table="CONTAS">
+		<id name="numeroDaConta" type="int" column="numeroDaConta">
+			<generator class="assigned" />
+		</id>
+		<property name="saldo" column="saldo" type="double" />
+		<property name="tipoDaConta" column="tipoDaConta" type="string" />
+		<property name="dataDaConta" column="dataDaConta" type="date" />
+
+		<many-to-one name="cliente" class="br.pucpcaldas.banco.dominio.Cliente" fetch="select"
+			column="codigo_cliente" not-null="true" />
+
+		<many-to-one name="banco" class="br.pucpcaldas.banco.dominio.Banco" fetch="select"
+			column="codigo_banco" not-null="true" insert="false" update="false"/>	
+	</class>
+</hibernate-mapping>

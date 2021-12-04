@@ -4,36 +4,41 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 /** 
- * Um objeto classe <code>Correntista</code> representa as informações de um
- * Correntista.
+ * Um objeto classe <code>Cliente</code> representa as informações de um
+ * Cliente.
  * 
  * @author Geovani Darcie
  * @Version 1.0
  * 
 */
-public class Correntista {
+public class Cliente {
     private int codigo;
     private String nome;
     private String CPF;
     private Collection<Conta> contas;
     
 
+    public static Cliente Nulo = new Cliente(0, "", "");
+    
+
     /**
      * Método construtor.
      * 
-     * @param codigo    código do Correntista
-     * @param nome      nome do Correntista
-     * @param CPF   número da agência do Correntista
+     * @param codigo    código do Cliente
+     * @param nome      nome do Cliente
+     * @param CPF   número da agência do Cliente
      */
-    public Correntista(int codigo, String nome, String CPF) {
+    public Cliente(int codigo, String nome, String CPF) {
         this.codigo = codigo;
         this.nome = nome;
         this.CPF = CPF;
         this.contas = new ArrayList<Conta>();
     }
 
+    public Cliente () {}
+
     /**
-     * Abre uma conta para o Correntista
+     * Abre uma conta para o Cliente
      * 
      */
     public void abrirConta(Conta conta) {
@@ -43,9 +48,9 @@ public class Correntista {
     }
 
     /**
-     * Retorna todas as contas do Correntista
+     * Retorna todas as contas do Cliente
      * 
-     * @return conta do Correntista
+     * @return conta do Cliente
      * 
      */
     public Collection<Conta> getConta() {
@@ -53,9 +58,9 @@ public class Correntista {
     }
 
     /**
-     * Retorna o código do Correntista
+     * Retorna o código do Cliente
      * 
-     * @return código do Correntista
+     * @return código do Cliente
      * 
      */
     public int getCodigo() {
@@ -63,9 +68,17 @@ public class Correntista {
     }
 
     /**
-     * Retorna o nome do Correntista
+     * Atualiza o código do Cliente
      * 
-     * @return nome do Correntista
+     */
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
+
+    /**
+     * Retorna o nome do Cliente
+     * 
+     * @return nome do Cliente
      * 
     */
     public String getNome() {
@@ -73,13 +86,28 @@ public class Correntista {
     }
 
     /**
-     * Retorna a CPF do Correntista
+     * Atualiza o nome do Cliente
      * 
-     * @return CPF do Correntista
+    */
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    /**
+     * Retorna a CPF do Cliente
+     * 
+     * @return CPF do Cliente
      * 
      */
     public String getCPF() {
         return CPF;
+    }
+    /**
+     * Atualiza o CPF do Cliente
+     * 
+     */
+    public void setCPF(String cpf) {
+        this.CPF = cpf;
     }
     
     @Override

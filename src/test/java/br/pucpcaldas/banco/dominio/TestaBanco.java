@@ -11,7 +11,7 @@ public class TestaBanco {
 
     @Test
     public void testeConstrutor_DeveCriarUmBancoValido() {
-        Banco nubank = new Banco(1, "nubank", 1.50);
+        Banco nubank = new Banco(1, "nubank", 150);
         
         assertEquals(1, nubank.getCodigo());
         assertEquals("nubank", nubank.getNome());

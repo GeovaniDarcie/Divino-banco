@@ -10,9 +10,9 @@ package br.pucpcaldas.banco.dominio;
 public class Banco {
     private int codigo;
     private String nome;
-    private double agencia;
+    private int agencia;
     
-
+    public static Banco Nulo = new Banco(0, "", 0);
     /**
      * Método construtor.
      * 
@@ -20,11 +20,13 @@ public class Banco {
      * @param nome      nome do banco
      * @param agencia   número da agência do banco
      */
-    public Banco(int codigo, String nome, double agencia) {
+    public Banco(int codigo, String nome, int agencia) {
         this.codigo = codigo;
         this.nome = nome;
         this.agencia = agencia;
     }
+
+    public Banco() {}
 
     /**
      * Retorna o código do banco
@@ -34,6 +36,16 @@ public class Banco {
      */
     public int getCodigo() {
         return codigo;
+    }
+
+    /**
+     * Atualiza o código do banco
+     * 
+     * @return código do banco
+     * 
+     */
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
     }
 
     /**
@@ -47,13 +59,33 @@ public class Banco {
     }
 
     /**
+     * Atualiza o nome do banco
+     * 
+     * @return nome do banco
+     * 
+    */
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    /**
      * Retorna a agência do banco
      * 
      * @return agência do banco
      * 
      */
-    public double getAgencia() {
+    public int getAgencia() {
         return agencia;
+    }
+
+    /**
+     * Atualiza a agência do banco
+     * 
+     * @return agência do banco
+     * 
+     */
+    public void setAgencia(int agencia) {
+        this.agencia = agencia;
     }
     
     @Override

@@ -1,28 +1,30 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.pucpcaldas</groupId>
-	<artifactId>Banco</artifactId>
-  <packaging>jar</packaging>
+	<artifactId>contas</artifactId>
+	<packaging>jar</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-  <properties>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
-    <encoding>UTF-8</encoding>
-    <project.build.sourceEncoding>${encoding}</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>${encoding}</project.reporting.outputEncoding>
-    <project.resources.sourceEncoding>${encoding}</project.resources.sourceEncoding>
-    <archetype.encoding>${encoding}</archetype.encoding>
-  </properties>
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<encoding>UTF-8</encoding>
+		<project.build.sourceEncoding>${encoding}</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>${encoding}</project.reporting.outputEncoding>
+		<project.resources.sourceEncoding>${encoding}</project.resources.sourceEncoding>
+		<archetype.encoding>${encoding}</archetype.encoding>
+	</properties>
 
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/junit/junit -->
 		<dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.13.2</version>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.13.2</version>
 			<scope>test</scope>
 		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/org.hsqldb/hsqldb -->
 		<dependency>
 			<groupId>org.hsqldb</groupId>
@@ -30,13 +32,14 @@
 			<version>2.4.0</version>
 			<scope>compile</scope>
 		</dependency>
-
+		
 		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 			<version>5.5.7.Final</version>
 		</dependency>
+		
 	</dependencies>
 	<build>
 		<plugins>
@@ -46,7 +49,7 @@
 				<artifactId>flyway-maven-plugin</artifactId>
 				<version>5.0.7</version>
 				<configuration>
-					<url>jdbc:hsqldb:file:data/pedidos</url>
+					<url>jdbc:hsqldb:file:desktop/data/dbContas</url>
 					<user>SA</user>
 				</configuration>
 				<dependencies>
@@ -60,12 +63,11 @@
 				</dependencies>
 			</plugin>
 		</plugins>
-
-    <resources>
-      <resource>
-          <directory>src/main/resources</directory>
-          <filtering>true</filtering>
-      </resource>
-  </resources>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
 	</build>
 </project>

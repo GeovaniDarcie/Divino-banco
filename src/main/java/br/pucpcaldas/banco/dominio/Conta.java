@@ -17,7 +17,8 @@ public class Conta {
     private String tipoDaConta;
     private Calendar dataDaConta;
     private Banco banco;
-    
+    private Cliente cliente;
+
 
     /**
      * Método construtor.
@@ -26,8 +27,9 @@ public class Conta {
      * @param saldo    saldo da conta
      * @param tipoDaConta   tipo da conta
      * @param Banco  banco ao qual pertence a conta
+     * @param Cliente cliente no qual a conta pertence
      */
-    public Conta(int numeroDaConta, double saldo, String tipoDaConta, Banco banco) {
+    public Conta(int numeroDaConta, double saldo, String tipoDaConta, Banco banco, Cliente cliente) {
         if (numeroDaConta < 0) {
 			throw new IllegalArgumentException("O número da conta precisa ser válido!");
 		}
@@ -36,7 +38,10 @@ public class Conta {
         this.tipoDaConta = tipoDaConta;
         this.dataDaConta = Calendar.getInstance();
         this.banco = banco;
+        this.cliente = cliente;
     }
+
+    public Conta() {}
 
     /**
      * Deposita uma quantidade de dinheiro na conta
@@ -83,6 +88,15 @@ public class Conta {
     }
 
     /**
+     * 
+     * @return Atualiza número da conta
+     * 
+     */
+    public void setNumeroDaConta(int numeroDaconta) {
+        this.numeroDaConta = numeroDaconta;
+    }
+
+    /**
      * Retorna o saldo da conta
      * 
      * @return saldo da conta
@@ -90,6 +104,14 @@ public class Conta {
     */
     public double getSaldo() {
         return saldo;
+    }
+
+    /**
+     * @return atualiza o saldo da conta
+     * 
+    */
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
     }
 
     /**
@@ -103,6 +125,15 @@ public class Conta {
     }
 
     /**
+     * Atualia o tipoDaConta
+     * 
+     * 
+     */
+    public void setTipoDaConta(String tipoDaConta) {
+        this.tipoDaConta = tipoDaConta;
+    }
+
+    /**
      * Retorna o banco relacionado a conta
      * 
      * @return banco
@@ -110,6 +141,33 @@ public class Conta {
      */
     public Banco getBanco() {
         return this.banco;
+    }
+
+    /**
+     * 
+     */
+    public void setBanco(Banco banco) {
+        this.banco = banco;
+    }
+
+    /**
+     * Retorna o cliennte relacionada a conta
+     * 
+     * @return cliente
+     * 
+     */
+    public Cliente getCliente() {
+        return this.cliente;
+    }
+
+    /**
+     * Atualiza o cliente relacionada a conta
+     * 
+     * @return cliente
+     * 
+     */
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
     @Override
